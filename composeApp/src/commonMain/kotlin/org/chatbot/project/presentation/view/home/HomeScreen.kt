@@ -29,7 +29,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,16 +36,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
-import org.chatbot.project.di.KoinHelper
 import org.chatbot.project.presentation.viewmodel.home.ChatMessage
 import org.chatbot.project.presentation.viewmodel.home.HomeViewModel
+import org.koin.compose.koinInject
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navigator: Navigator) {
-    val viewModel = remember { KoinHelper.get<HomeViewModel>() }
+    val viewModel = koinInject<HomeViewModel>()
     val uiState by viewModel.uiState.collectAsState()
     val listState = rememberLazyListState()
     

@@ -30,13 +30,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
-import org.chatbot.project.di.KoinHelper
 import org.chatbot.project.navigation.Screen
 import org.chatbot.project.presentation.viewmodel.login.LoginViewModel
+import org.koin.compose.koinInject
 
 @Composable
 fun LoginScreen(navigator: Navigator) {
-    val viewModel = remember { KoinHelper.get<LoginViewModel>() }
+    val viewModel = koinInject<LoginViewModel>()
     val uiState by viewModel.uiState.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
     

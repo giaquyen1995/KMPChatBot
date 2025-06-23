@@ -60,6 +60,7 @@ kotlin {
             
             // Koin
             implementation(libs.koin.core)
+            implementation(libs.koin.compose)
             
             // PreCompose for Navigation
             implementation(libs.precompose)
