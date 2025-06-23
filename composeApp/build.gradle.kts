@@ -34,6 +34,15 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            
+            // Ktor Android engine
+            implementation(libs.ktor.client.okhttp)
+        }
+        
+        iosMain.dependencies {
+            // Ktor iOS engine
+            implementation(libs.ktor.client.darwin)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,11 +52,9 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
             
             // Koin
             implementation(libs.koin.core)
-            implementation(libs.koin.compose)
             
             // PreCompose for Navigation
             implementation(libs.precompose)

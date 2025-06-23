@@ -32,11 +32,11 @@ import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
 import org.chatbot.project.navigation.Screen
 import org.chatbot.project.presentation.viewmodel.login.LoginViewModel
-import org.koin.compose.koinInject
+import org.koin.core.context.GlobalContext
 
 @Composable
 fun LoginScreen(navigator: Navigator) {
-    val viewModel = koinInject<LoginViewModel>()
+    val viewModel = remember { GlobalContext.get().get<LoginViewModel>() }
     val uiState by viewModel.uiState.collectAsState()
     val snackbarHostState = remember { SnackbarHostState() }
     
@@ -51,8 +51,7 @@ fun LoginScreen(navigator: Navigator) {
     // Handle successful login
     LaunchedEffect(uiState.isLoggedIn) {
         if (uiState.isLoggedIn) {
-            // TODO: Navigate to home screen once implemented
-            // For now, we'll just stay on the login screen
+            navigator.navigate(Screen.Home.route)
         }
     }
     

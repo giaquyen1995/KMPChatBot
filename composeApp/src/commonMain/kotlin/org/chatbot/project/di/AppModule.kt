@@ -37,4 +37,5 @@ fun appModule(): Module = module {
     // ViewModels
     factory { SplashViewModel(get()) }
     factory { LoginViewModel(get()) }
+    factory { org.chatbot.project.presentation.viewmodel.home.HomeViewModel() }
 }

@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -23,11 +24,11 @@ import moe.tlaster.precompose.navigation.Navigator
 import org.chatbot.project.navigation.Screen
 import org.chatbot.project.presentation.viewmodel.splash.SplashUIState
 import org.chatbot.project.presentation.viewmodel.splash.SplashViewModel
-import org.koin.compose.koinInject
+import org.koin.core.context.GlobalContext
 
 @Composable
 fun SplashScreen(navigator: Navigator) {
-    val viewModel = koinInject<SplashViewModel>()
+    val viewModel = remember { GlobalContext.get().get<SplashViewModel>() }
     val uiState by viewModel.uiState.collectAsState()
     
     LaunchedEffect(uiState) {
@@ -36,8 +37,7 @@ fun SplashScreen(navigator: Navigator) {
                 navigator.navigate(Screen.Login.route)
             }
             is SplashUIState.NavigateToHome -> {
-                // TODO: Replace with home screen route once implemented
-                navigator.navigate(Screen.Login.route)
+                navigator.navigate(Screen.Home.route)
             }
             SplashUIState.Loading -> {
                 // Stay on splash screen
