@@ -1,0 +1,257 @@
+# Build directories
+build/
+*/build/
+**/build/
+.gradle/
+gradlew.lock
+
+# Android specific build artifacts
+**/intermediates/
+**/dex/
+**/tmp/kotlin-classes/
+**/*.dex
+**/*.class
+**/*.jar
+**/*.apk
+**/*.aab
+**/*.arsc.flat
+
+# Gradle dependency accessors and configuration cache
+.gradle/*/dependencies-accessors/
+.gradle/*/configuration-cache/
+.gradle/*/kotlin-dsl/
+.gradle/*/executionHistory/
+.gradle/*/fileChanges/
+.gradle/*/fileHashes/
+.gradle/buildOutputCleanup/
+.gradle/vcs-1/
+
+# Kotlin metadata and sessions
+.kotlin/metadata/
+.kotlin/sessions/
+.kotlin/**/
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+local.properties
+
+# Kotlin Multiplatform
+*.kotlin_module
+.kotlin/
+
+# Compose Resources
+composeApp/src/commonMain/composeResources/.generated/
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+captures/
+.externalNativeBuild/
+.cxx/
+*.so
+
+# iOS
+iosApp/iosApp.xcodeproj/xcuserdata/
+iosApp/iosApp.xcodeproj/project.xcworkspace/xcuserdata/
+iosApp/iosApp.xcworkspace/xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Configuration Cache and Gradle Artifacts
+.gradle/configuration-cache/
+.gradle/6.*/
+.gradle/7.*/
+.gradle/8.*/
+.gradle/buildOutputCleanup/
+.gradle/vcs-1/
+.gradle/kotlin-dsl/
+.gradle/executionHistory/
+.gradle/fileChanges/
+.gradle/fileHashes/
+
+# Incremental compilation artifacts
+**/incremental/
+**/dex/
+**/project_dex_archive/
+**/merged_res/
+**/merged_res_blame_folder/
+**/zip-cache/
+*.salive
+
+# Kotlin/Native
+*.konan/
+
+# JetBrains
+/.fleet/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (if using Firebase)
+google-services.json
+GoogleService-Info.plist
+
+# Generated files
+generated/
+**/generated/
+
+# Test results
+test-results/
+reports/
+
+# Coverage reports
+coverage/
+*.exec
+
+# Profiling
+*.hprof
+
+# Memory dumps
+*.dump
+
+# Error screenshots
+error-screenshots/
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Node.js (if using any JS tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE specific files
+*.swp
+*.swo
+*~
+.vscode/
+*.code-workspace
+
+# Crashlytics configuaration file (if using Firebase Crashlytics)
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
