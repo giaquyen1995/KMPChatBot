@@ -44,6 +44,11 @@ kotlin {
             // Ktor iOS engine
             implementation(libs.ktor.client.darwin)
         }
+        
+        iosMain.dependencies {
+            // Ktor iOS engine
+            implementation(libs.ktor.client.darwin)
+        }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -63,6 +68,9 @@ kotlin {
             
             // Coroutines
             implementation(libs.kotlinx.coroutines.core)
+            
+            // DateTime
+            implementation(libs.kotlinx.datetime)
             
             // Ktor
             implementation(libs.ktor.client.core)

@@ -37,16 +37,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
+import org.chatbot.project.di.KoinHelper
 import org.chatbot.project.presentation.viewmodel.home.ChatMessage
 import org.chatbot.project.presentation.viewmodel.home.HomeViewModel
-import org.koin.core.context.GlobalContext
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Send
+import androidx.compose.material.icons.filled.Send
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navigator: Navigator) {
-    val viewModel = remember { GlobalContext.get().get<HomeViewModel>() }
+    val viewModel = remember { KoinHelper.get<HomeViewModel>() }
     val uiState by viewModel.uiState.collectAsState()
     val listState = rememberLazyListState()
     
@@ -174,7 +174,7 @@ fun MessageInput(
             enabled = message.isNotBlank()
         ) {
             Icon(
-                imageVector = Icons.AutoMirrored.Filled.Send,
+                imageVector = Icons.Filled.Send,
                 contentDescription = "Send",
                 tint = if (message.isNotBlank()) {
                     MaterialTheme.colorScheme.primary

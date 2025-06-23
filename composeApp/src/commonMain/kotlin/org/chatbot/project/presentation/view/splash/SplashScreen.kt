@@ -21,14 +21,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import moe.tlaster.precompose.navigation.Navigator
+import org.chatbot.project.di.KoinHelper
 import org.chatbot.project.navigation.Screen
 import org.chatbot.project.presentation.viewmodel.splash.SplashUIState
 import org.chatbot.project.presentation.viewmodel.splash.SplashViewModel
-import org.koin.core.context.GlobalContext
 
 @Composable
 fun SplashScreen(navigator: Navigator) {
-    val viewModel = remember { GlobalContext.get().get<SplashViewModel>() }
+    val viewModel = remember { KoinHelper.get<SplashViewModel>() }
     val uiState by viewModel.uiState.collectAsState()
     
     LaunchedEffect(uiState) {

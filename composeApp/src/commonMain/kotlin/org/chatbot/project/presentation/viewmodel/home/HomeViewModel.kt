@@ -20,7 +20,7 @@ class HomeViewModel : ViewModel() {
             val newMessage = ChatMessage(
                 text = currentState.currentMessage,
                 isFromUser = true,
-                timestamp = System.currentTimeMillis()
+                timestamp = getCurrentTimeMillis()
             )
             
             val updatedMessages = currentState.messages + newMessage
@@ -38,13 +38,17 @@ class HomeViewModel : ViewModel() {
         val botResponse = ChatMessage(
             text = "Xin chào! Tôi là Chat Bot. Tôi có thể giúp gì cho bạn?",
             isFromUser = false,
-            timestamp = System.currentTimeMillis()
+            timestamp = getCurrentTimeMillis()
         )
         
         val currentState = _uiState.value
         _uiState.value = currentState.copy(
             messages = currentState.messages + botResponse
         )
+    }
+    
+    private fun getCurrentTimeMillis(): Long {
+        return kotlinx.datetime.Clock.System.now().toEpochMilliseconds()
     }
 }
 
